@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "SearchMultiple";
+}
+
+<h2>SearchMultiple</h2>
+
+
+@model IEnumerable<WebApplication1.Models.StockItem>
+
+
+
+
+    @using (Html.BeginForm("SearchMultiple", "namePrice", FormMethod.Get))
+    {
+    <p>
+        Ras: @Html.DropDownList("namePrice", "All")
+        Sök Artikel: @Html.TextBox("SearchString")
+        <input type="submit" value="Filter" />
+    </p>
+    }
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShelfPosition)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShelfPosition)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ArticleNumber }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ArticleNumber }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ArticleNumber })
+        </td>
+    </tr>
+}
+
+</table>

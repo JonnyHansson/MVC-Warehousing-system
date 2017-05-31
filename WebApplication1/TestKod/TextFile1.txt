@@ -1,0 +1,100 @@
+﻿//// GET: 
+//public ActionResult Index()
+//{
+//    return View(db.Items.ToList());
+//}
+
+//// GET: 
+//public ActionResult Details(int? id)
+//{
+//    if (id == null)
+//    {
+//        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+//    }
+//    StockItem item = db.Items.Find(id);
+
+//    if (item == null)
+//    {
+//        return HttpNotFound();
+//    }
+//    return View(item);
+//}
+
+//// GET: BookAutomated/Create
+//public ActionResult Create()
+//{
+//    return View();
+//}
+//[HttpPost]
+//[ValidateAntiForgeryToken]
+
+//public ActionResult Create([Bind(Include = "ArticleNumber,Name,Price,ShelfPosition,Quantity,Description")] StockItem item)
+//{
+//    if (ModelState.IsValid)
+//    {
+//        db.Items.Add(item);
+//        db.SaveChanges();
+//        return RedirectToAction("Index");
+//    }
+//    return View(item);
+//}
+
+//[HttpGet]
+//public ActionResult Delete(int? id)
+//{
+//    if (id == null)
+//    {
+//        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+//    }
+//    StockItem item = db.Items.Find(id);
+//    if (item == null)
+//    {
+//        return HttpNotFound();
+//    }
+//    return View(item);
+//}
+
+//Fungerar
+//// POST: BookAutomated/Delete/5
+//[HttpPost, ActionName("Delete")]
+//[ValidateAntiForgeryToken]
+//public ActionResult DeleteConfirmed(int id)
+//{
+//    StockItem item = db.Items.Find(id);
+//    db.Items.Remove(item);
+//    db.SaveChanges();
+//    return RedirectToAction("Index");
+//}
+
+
+
+//// GET: Edit
+//public ActionResult Edit(int? id)
+//{
+//    if (id == null)
+//    {
+//        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+//    }
+//    StockItem item = db.Items.Find(id);
+//    if (item == null)
+//    {
+//        return HttpNotFound();
+//    }
+//    return View(item);
+//}
+
+//// POST: Fungerar
+//// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+//// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+//[HttpPost]
+//[ValidateAntiForgeryToken]
+//public ActionResult Edit([Bind(Include = "ArticleNumber,Name,Price,ShelfPosition,Quantity,Description")] StockItem item)
+//{
+//    if (ModelState.IsValid)
+//    {
+//        db.Entry(item).State = EntityState.Modified;
+//        db.SaveChanges();
+//        return RedirectToAction("Index");
+//    }
+//    return View(item);
+//}
